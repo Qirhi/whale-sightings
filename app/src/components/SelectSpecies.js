@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import { useSnackbar } from 'notistack';
 
-// Material UI styles
+// Material UI styles 
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -45,6 +45,8 @@ const speciesList = [
 const SelectSpecies = (props) => {
   const classes = useStyles();
   const { enqueueSnackbar } = useSnackbar();
+
+  console.log("select species fires")
 
   const handleClick = (e) => {
     // dispatch to the action creator... change species state

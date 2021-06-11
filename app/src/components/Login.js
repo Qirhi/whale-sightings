@@ -63,7 +63,8 @@ const Login = () => {
     axios.post("http://localhost:5000/api/login", credentials)
     .then(res => {
       console.log(res);
-      localStorage.setItem("authToken", res.data.payload);
+      // localStorage.setItem("authToken", res.data.payload);
+      localStorage.setItem("authToken", 1234567890);
 
       // redirect to logged in species page
       history.push("/protected");

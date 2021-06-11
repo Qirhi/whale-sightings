@@ -41,7 +41,11 @@ export default function LoginHeader () {
 
   let history = useHistory();
 
-function handleClick() {
+function handleTitleClick() {
+  history.push("/");
+};
+
+function handleLoginClick() {
   history.push("/login");
 };
 
@@ -54,9 +58,11 @@ function handleClick() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
+            <a onClick={handleTitleClick}>
             Whale Sighting App 🐋
+            </a>
           </Typography>
-          <Button color="inherit" onClick={handleClick}>Login</Button>
+          <Button color="inherit" onClick={handleLoginClick}>Login</Button>
         </Toolbar>
       </AppBar>
     </div>
