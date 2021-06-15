@@ -60,16 +60,16 @@ const Login = () => {
   const doLogin = () => {
     console.log("doLogin fired")
     console.log("credentials: ", credentials)
-    axios.post("http://localhost:5000/api/login", credentials)
-    .then(res => {
-      console.log(res);
-      // localStorage.setItem("authToken", res.data.payload);
-      localStorage.setItem("authToken", 1234567890);
+    // axios.post("http://localhost:5000/api/login", credentials)
+    // .then(res => {
+    //   console.log(res);
+    //   // localStorage.setItem("authToken", res.data.payload);
+    //   localStorage.setItem("authToken", 1234567890);
 
       // redirect to logged in species page
       history.push("/protected");
-    })
-    .catch(err => console.log(err));
+    // })
+    // .catch(err => console.log(err));
   }
 
   const handleSubmit = (e) => {
