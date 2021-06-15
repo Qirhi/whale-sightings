@@ -5,7 +5,7 @@ import App from './App';
 import { BrowserRouter as Router } from "react-router-dom";
 import { SnackbarProvider } from 'notistack';
 
-import { appReducer } from './reducers/appReducer';
+import { appReducer } from './state/reducers/appReducer';
 
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { connect } from "react-redux";
-import { selectSpecies, getSpecies } from '../actions/index';
+import { selectSpecies, getSpecies } from '../state/actions/index';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { gsap } from "gsap";
