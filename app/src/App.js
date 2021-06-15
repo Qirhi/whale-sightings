@@ -30,6 +30,10 @@ function App() {
         
             <Route path="/protected">
               <SelectSpecies/>
+              {/* <Sightings/> */}
+            </Route>
+
+            <Route path="/sightings">
               <Sightings/>
             </Route>
 

@@ -1,4 +1,8 @@
-import { SELECT_SPECIES, FETCH_SPECIES_START, FETCH_SPECIES_SUCCESS, FETCH_SPECIES_FAILURE } from '../actions/index';
+import { 
+  SELECT_SPECIES, 
+  FETCH_SPECIES_START, 
+  FETCH_SPECIES_SUCCESS, 
+  FETCH_SPECIES_FAILURE } from '../actions/index';
 
 
 const initialState = {

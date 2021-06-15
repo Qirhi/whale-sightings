@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { connect } from "react-redux";
 import { selectSpecies, getSpecies } from '../state/actions/index';
@@ -45,6 +46,7 @@ const speciesList = [
 const SelectSpecies = (props) => {
   const classes = useStyles();
   const { enqueueSnackbar } = useSnackbar();
+  const history = useHistory();
 
   console.log("select species fires")
 
@@ -55,11 +57,13 @@ console.log("e.currentTarget.id: ", e.currentTarget.id) // gives species name
     
     props.selectSpecies(selectedSpecies);
     props.getSpecies(selectedSpecies);
+
+    history.push('/sightings');
   }
 
   useEffect (() => {
     enqueueSnackbar('Click on a species...');
-  }, []);
+  }, []); // creates snackbar prompting user to select species on component load
 
   useEffect(() => {
     gsap.to(".species-button", {duration: 2, y: 30});
