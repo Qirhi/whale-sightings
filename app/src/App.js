@@ -1,4 +1,7 @@
 import './App.css';
+
+import {useEffect} from 'react';
+
 import { Switch, Route } from "react-router-dom";
 // import { Link } from "react-router-dom";
 // import { useState } from 'react';
@@ -9,10 +12,15 @@ import Login from './components/Login';
 
 import SelectSpecies from './components/SelectSpecies';
 import Sightings from './components/Sightings';
-
+import {useDispatch} from 'react-redux';
+import {FETCH_LOCATION_SUCCESS, getLocation,testing} from './state/actions/index';
 function App() {
-  // const [user, setUser] = useState({}); // empty object user
-
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    console.log('getLocation useEffect');
+    dispatch(getLocation);
+    // dispatch({type:FETCH_LOCATION_SUCCESS});
+  },[]);
   return (
       <div className="App">
       
