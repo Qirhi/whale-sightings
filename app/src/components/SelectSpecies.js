@@ -7,6 +7,7 @@ import { selectSpecies, getSpecies } from '../state/actions/index';
 import { makeStyles } from '@material-ui/core/styles';
 import { gsap } from "gsap";
 
+
 import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import { useSnackbar } from 'notistack';
@@ -60,7 +61,6 @@ console.log("e.currentTarget.id: ", e.currentTarget.id) // gives species name
 
     history.push('/sightings');
   }
-
   useEffect (() => {
     enqueueSnackbar('Click on a species...');
   }, []); // creates snackbar prompting user to select species on component load
@@ -89,6 +89,6 @@ console.log("e.currentTarget.id: ", e.currentTarget.id) // gives species name
 };
 
 
-const mapDispatchToProps = { getSpecies, selectSpecies };
+const mapDispatchToProps = { getSpecies, selectSpecies};
 
 export default connect(null, mapDispatchToProps)(SelectSpecies);
