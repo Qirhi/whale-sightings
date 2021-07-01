@@ -12,15 +12,7 @@ import Login from './components/Login';
 
 import SelectSpecies from './components/SelectSpecies';
 import Sightings from './components/Sightings';
-import {useDispatch} from 'react-redux';
-import {FETCH_LOCATION_SUCCESS, getLocation,testing} from './state/actions/index';
 function App() {
-  const dispatch = useDispatch();
-  useEffect(()=>{
-    console.log('getLocation useEffect');
-    dispatch(getLocation);
-    // dispatch({type:FETCH_LOCATION_SUCCESS});
-  },[]);
   return (
       <div className="App">
       

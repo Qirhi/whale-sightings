@@ -17,7 +17,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import AddIcon from '@material-ui/icons/Add';
 import SearchIcon from '@material-ui/icons/Search';
 import MoreIcon from '@material-ui/icons/MoreVert';
-
+import PublicIcon from '@material-ui/icons/Public';
+import { connect } from 'react-redux';
+import { getLocation } from '../state/actions';
+import { useHistory } from 'react-router-dom';
 // const messages = [
 //   {
 //     id: 1,
@@ -97,9 +100,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LoginFooter() {
+function LoginFooter(props) {
+  const history = useHistory();
   const classes = useStyles();
-
+  const handleGetLocation=()=>{
+    navigator.geolocation.getCurrentPosition((position)=>{
+      // call the action getLocation
+      console.log(position);
+      props.getLocation(position);
+      history.push('/sightings');
+    });
+  }
   return (
     <React.Fragment>
       <CssBaseline />
@@ -129,7 +140,7 @@ export default function LoginFooter() {
       <AppBar position="fixed" color="primary" className={classes.appBar}>
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="open drawer">
-            <MenuIcon />
+            <PublicIcon onClick={handleGetLocation}/>
           </IconButton>
           <Fab color="secondary" aria-label="add" className={classes.fabButton}>
             <AddIcon />
@@ -146,3 +157,9 @@ export default function LoginFooter() {
     </React.Fragment>
   );
 }
+const mapDispatchToProps=(dispatch)=>{
+  return{
+    getLocation:(position)=>dispatch(getLocation(position))
+  }
+}
+export default connect(null,mapDispatchToProps)(LoginFooter);
