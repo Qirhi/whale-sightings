@@ -15,8 +15,9 @@ export const selectSpecies = (selectedSpecies) => {
   return {type: SELECT_SPECIES, payload: selectedSpecies};
 }
 
-export const getLocation=dispatch=>{
+export const getLocation=coord=>dispatch=>{
   console.log('get Location is called')
+  // axios.get(`http://hotline.whalemuseum.org/api.json?species=orca&near=${coord.latitude},${coord.longitude}`)
   axios.get(`http://hotline.whalemuseum.org/api.json?species=orca&near=48.5159,-123.1524`)
   .then((res)=>{
     console.log('Location api',res.data);

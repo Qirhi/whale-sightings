@@ -9,6 +9,7 @@
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.0",
     "axios": "^0.21.1",
+    "google-map-react": "^2.1.10",
     "gsap": "^3.6.1",
     "notistack": "^1.0.9",
     "react": "^17.0.1",

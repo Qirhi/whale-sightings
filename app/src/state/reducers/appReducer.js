@@ -52,7 +52,7 @@ export const appReducer = (state = initialState, action) => {
           return { ...state, loading: false, error: action.payload }
       case FETCH_LOCATION_SUCCESS:
         console.log('fetch location reducer called',action.payload);
-        return {...state, loading:false, sightings:[...state.sightings,action.payload]};
+        return {...state, loading:false, sightings:action.payload};
       default:
           console.log("Error: unknown action type in App Reducer", action.type);
           return state;  
